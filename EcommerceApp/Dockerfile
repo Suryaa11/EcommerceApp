@@ -4,8 +4,8 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package
 
-
-FROM eclipse-temurin:17-jre
-WORKDIR /app
-COPY --from=build /app/target/EcommerceApp-0.0.1-SNAPSHOT app.jar
-CMD["java","-jar","app.jar"]
+FROM tomcat:10.1.15-jdk17
+RUN rm -rf /usr/local/tomcat/webapps/*
+COPY target/EcommerceApp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
