@@ -7,5 +7,5 @@ RUN mvn clean package
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=build /app/target/demo-app-1.0-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/EcommerceApp-0.0.1-SNAPSHOT app.jar
 CMD["java","-jar","app.jar"]
