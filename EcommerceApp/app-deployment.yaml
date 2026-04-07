@@ -5,7 +5,7 @@ metadata:
   namespace: ecommerce-ns
 spec:
   replicas: 3
-  selectors:
+  selector:
     matchLabels:
       app: ecommerce
   strategy:
@@ -37,7 +37,7 @@ metadata:
   name: ecommerce-svc
   namespace: ecommerce-ns
 spec:
-  selectors:
+  selector:
     app: ecommerce
   ports:
     - port: 8080
