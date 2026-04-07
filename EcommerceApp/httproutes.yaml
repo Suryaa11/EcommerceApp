@@ -12,11 +12,11 @@ spec:
           type: PathPrefix
           value: /
       filters:
-        type: URLRewrite
-        urlRewrite:
-          path:
-            type: ReplacePrefixMatch
-            replacePrefixMatch: /
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
       backendRefs:
         - name: ecommerce-svc
           port: 8080
