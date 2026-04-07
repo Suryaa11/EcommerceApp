@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: ecommerce-cont
-          image: suryaa112003/ecommerce:v1.1.0
+          image: nimeshsv814/ecommerce-app:v1.1.0
           ports:
             - containerPort: 8080
           resources:
